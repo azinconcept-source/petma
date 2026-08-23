@@ -1,0 +1,682 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>PETMA Solar | Solar, Battery &amp; Smart Energy Solutions</title>
+<meta name="description" content="PETMA Solar designs solar installations, lithium battery storage, hybrid power, and smart energy systems for homes and businesses in Nigeria and Canada."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif']},colors:{brand:{DEFAULT:'#00A859',foreground:'#ffffff'},'brand-red':{DEFAULT:'#E52323',foreground:'#ffffff'},ink:{DEFAULT:'#0C0D0E'},'ink-soft':{DEFAULT:'#111213'},'ink-muted':{DEFAULT:'#9CA3AF'}}}}}
+</script>
+<style>
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif}
+#navbar{transition:box-shadow .3s}
+#navbar.scrolled{box-shadow:0 2px 16px rgba(0,0,0,.6)}
+.hero-bg{background-image:linear-gradient(to right,rgba(12,13,14,.93) 40%,rgba(12,13,14,.55)),url('images/hero-installation.webp');background-size:cover;background-position:center}
+.calc-input{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff}
+.calc-input:focus{outline:none;border-color:#00A859}
+.calc-input option{background:#1a1a1a;color:#fff}
+.pkg-card{transition:transform .25s,box-shadow .25s}
+.pkg-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,.18)}
+.proj-img{transition:transform .4s}
+.project-card:hover .proj-img{transform:scale(1.06)}
+.svc-card{transition:transform .25s,box-shadow .25s,border-color .25s}
+.svc-card:hover{transform:translateY(-4px);border-color:#00A859;box-shadow:0 8px 24px rgba(0,168,89,.12)}
+@keyframes wa-pulse{0%,100%{box-shadow:0 0 0 0 rgba(229,35,35,.5)}50%{box-shadow:0 0 0 10px rgba(229,35,35,0)}}
+.wa-pulse{animation:wa-pulse 2s infinite}
+#mobile-menu{transition:max-height .35s ease,opacity .35s;max-height:0;opacity:0;overflow:hidden}
+#mobile-menu.open{max-height:600px;opacity:1}
+</style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+<!-- WHATSAPP FLOATING BUTTON -->
+<a href="https://wa.me/2348175393233" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 flex items-center gap-2 group">
+  <span class="hidden group-hover:flex items-center bg-white text-gray-800 text-sm font-semibold px-3 py-2 rounded-full shadow-lg mr-1 whitespace-nowrap">Chat on WhatsApp</span>
+  <span class="wa-pulse flex items-center justify-center w-14 h-14 rounded-full bg-red-600 text-white shadow-xl"><i class="fab fa-whatsapp text-2xl"></i></span>
+</a>
+
+<!-- NAVBAR -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-40 bg-ink">
+  <div class="bg-ink-soft border-b border-white/10 text-xs text-ink-muted hidden md:block">
+    <div class="max-w-7xl mx-auto px-4 py-1.5 flex justify-between items-center">
+      <span>Nigeria&#39;s Trusted Solar &amp; Smart Energy Company</span>
+      <a href="https://wa.me/2348175393233" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-white hover:text-brand transition-colors">
+        <i class="fab fa-whatsapp text-brand"></i> Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="#home" class="flex items-center gap-2 flex-shrink-0">
+      <img src="images/logo-horizontal-clean.png" alt="PETMA Solar" class="h-9 w-auto" id="logo-img"
+           onerror="document.getElementById('logo-img').style.display='none';document.getElementById('logo-text').style.display='flex';"/>
+      <span id="logo-text" style="display:none" class="items-center gap-1 text-xl font-black tracking-tight">
+        <span class="text-brand">Kowa</span><span class="text-red-500">tek</span>
+        <span class="text-white/50 font-normal text-sm ml-1">Solar</span>
+      </span>
+    </a>
+    <div class="hidden lg:flex items-center gap-6 text-sm font-medium text-white/80">
+      <a href="#home" class="text-brand">Home</a>
+      <a href="#about" class="hover:text-brand transition-colors">About Us</a>
+      <a href="#services" class="hover:text-brand transition-colors">Services</a>
+      <a href="#packages" class="hover:text-brand transition-colors">Solutions &amp; Packages</a>
+      <a href="#projects" class="hover:text-brand transition-colors">Projects</a>
+      <a href="#agents" class="hover:text-brand transition-colors">Installer/Agents</a>
+      <a href="#contact" class="hover:text-brand transition-colors">Contact</a>
+    </div>
+    <div class="hidden lg:flex items-center gap-4">
+      <a href="tel:08100793528" class="flex items-center gap-1.5 text-sm text-white/70 hover:text-white transition-colors">
+        <i class="fas fa-phone-alt text-brand text-xs"></i> 08100793528
+      </a>
+      <a href="#contact" class="bg-brand hover:bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded-md transition-colors whitespace-nowrap">Get Free Consultation</a>
+    </div>
+    <button id="hamburger" class="lg:hidden text-white p-2" aria-label="Menu"><i class="fas fa-bars text-xl"></i></button>
+  </div>
+  <div id="mobile-menu" class="lg:hidden bg-ink-soft border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-4">
+      <a href="#home" class="text-brand font-semibold">Home</a>
+      <a href="#about" class="text-white/80 hover:text-brand transition-colors">About Us</a>
+      <a href="#services" class="text-white/80 hover:text-brand transition-colors">Services</a>
+      <a href="#packages" class="text-white/80 hover:text-brand transition-colors">Solutions &amp; Packages</a>
+      <a href="#projects" class="text-white/80 hover:text-brand transition-colors">Projects</a>
+      <a href="#agents" class="text-white/80 hover:text-brand transition-colors">Installer/Agents</a>
+      <a href="#contact" class="text-white/80 hover:text-brand transition-colors">Contact</a>
+      <a href="#contact" class="bg-brand text-white font-semibold text-center py-2.5 rounded-md">Get Free Consultation</a>
+    </div>
+  </div>
+</nav>
+<!-- HERO -->
+<section class="hero-bg min-h-screen flex items-center pt-28 pb-16" id="home">
+  <div class="max-w-7xl mx-auto px-4 w-full">
+    <div class="max-w-2xl">
+      <div class="inline-flex items-center gap-2 bg-green-900/40 border border-brand/40 text-brand text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full mb-6">
+        <i class="fas fa-sun"></i> Nigeria &amp; Canada&#39;s Trusted Solar Company
+      </div>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+        Premium Solar &amp; <br/><span class="text-brand">Smart Energy</span><br/>Solutions
+      </h1>
+      <p class="text-lg text-white/75 mb-8 leading-relaxed">
+        We design and install reliable solar systems, lithium battery solutions and smart energy technologies that <strong class="text-white">reduce costs and keep you powered 24/7</strong>.
+      </p>
+      <div class="grid grid-cols-2 gap-3 mb-10 max-w-md">
+        <div class="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 text-white text-sm"><i class="fas fa-bolt text-brand"></i> Engineered for Reliability</div>
+        <div class="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 text-white text-sm"><i class="fas fa-piggy-bank text-brand"></i> Reduce Energy Costs</div>
+        <div class="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 text-white text-sm"><i class="fas fa-chart-line text-brand"></i> Smart Monitoring &amp; Control</div>
+        <div class="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 text-white text-sm"><i class="fas fa-headset text-brand"></i> 24/7 Support</div>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-brand hover:bg-green-600 text-white font-bold px-7 py-3.5 rounded-md transition-colors text-base">
+          Get Free Consultation <i class="fas fa-arrow-right text-sm"></i>
+        </a>
+        <a href="#calculator" class="inline-flex items-center justify-center gap-2 border border-white/40 hover:border-white text-white font-semibold px-7 py-3.5 rounded-md transition-colors text-base">
+          <i class="fas fa-calculator text-sm"></i> Calculate Your Savings
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<section class="bg-ink border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
+      <div class="flex items-center gap-4 px-6 py-8">
+        <div class="flex-shrink-0 w-12 h-12 rounded-full border border-brand/40 flex items-center justify-center"><i class="fas fa-solar-panel text-brand text-lg"></i></div>
+        <div><div class="text-2xl font-black text-white">100+</div><div class="text-sm text-ink-muted">Projects Completed</div></div>
+      </div>
+      <div class="flex items-center gap-4 px-6 py-8">
+        <div class="flex-shrink-0 w-12 h-12 rounded-full border border-brand/40 flex items-center justify-center"><i class="fas fa-coins text-brand text-lg"></i></div>
+        <div><div class="text-2xl font-black text-white">Millions</div><div class="text-sm text-ink-muted">Saved in Energy Costs</div></div>
+      </div>
+      <div class="flex items-center gap-4 px-6 py-8">
+        <div class="flex-shrink-0 w-12 h-12 rounded-full border border-brand/40 flex items-center justify-center"><i class="fas fa-building text-brand text-lg"></i></div>
+        <div><div class="text-xl font-black text-white leading-tight">Residential &amp;</div><div class="text-sm text-ink-muted">Commercial Solutions</div></div>
+      </div>
+      <div class="flex items-center gap-4 px-6 py-8">
+        <div class="flex-shrink-0 w-12 h-12 rounded-full border border-brand/40 flex items-center justify-center"><i class="fas fa-headset text-brand text-lg"></i></div>
+        <div><div class="text-2xl font-black text-white">24/7</div><div class="text-sm text-ink-muted">Support &amp; Maintenance</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- SERVICES -->
+<section id="services" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+      <div>
+        <p class="text-xs font-bold tracking-widest text-brand uppercase mb-2">OUR SERVICES</p>
+        <h2 class="text-3xl md:text-4xl font-black text-gray-900">End-to-End Energy Solutions</h2>
+      </div>
+      <a href="#services" class="inline-flex items-center gap-1.5 text-brand font-semibold text-sm">View All Services <i class="fas fa-caret-right"></i></a>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div class="svc-card border border-gray-200 rounded-xl p-6">
+        <div class="w-11 h-11 bg-green-50 rounded-lg flex items-center justify-center mb-4"><i class="fas fa-solar-panel text-brand text-xl"></i></div>
+        <h4 class="font-bold text-gray-900 mb-2">Solar Installation</h4>
+        <p class="text-sm text-gray-500 leading-relaxed">High-performance solar systems for homes and businesses.</p>
+      </div>
+      <div class="svc-card border border-gray-200 rounded-xl p-6">
+        <div class="w-11 h-11 bg-green-50 rounded-lg flex items-center justify-center mb-4"><i class="fas fa-clipboard-check text-brand text-xl"></i></div>
+        <h4 class="font-bold text-gray-900 mb-2">Energy Audit</h4>
+        <p class="text-sm text-gray-500 leading-relaxed">Detailed energy analysis to identify savings and right-size solutions.</p>
+      </div>
+      <div class="svc-card border border-gray-200 rounded-xl p-6">
+        <div class="w-11 h-11 bg-green-50 rounded-lg flex items-center justify-center mb-4"><i class="fas fa-battery-full text-brand text-xl"></i></div>
+        <h4 class="font-bold text-gray-900 mb-2">Lithium Battery Systems</h4>
+        <p class="text-sm text-gray-500 leading-relaxed">Safe, long-life lithium batteries for reliable backup power.</p>
+      </div>
+      <div class="svc-card border border-gray-200 rounded-xl p-6">
+        <div class="w-11 h-11 bg-green-50 rounded-lg flex items-center justify-center mb-4"><i class="fas fa-chart-line text-brand text-xl"></i></div>
+        <h4 class="font-bold text-gray-900 mb-2">Smart Energy Monitoring</h4>
+        <p class="text-sm text-gray-500 leading-relaxed">Real-time monitoring, analytics and remote system control.</p>
+      </div>
+      <div class="svc-card border border-gray-200 rounded-xl p-6">
+        <div class="w-11 h-11 bg-green-50 rounded-lg flex items-center justify-center mb-4"><i class="fas fa-plug text-brand text-xl"></i></div>
+        <h4 class="font-bold text-gray-900 mb-2">Hybrid Power Systems</h4>
+        <p class="text-sm text-gray-500 leading-relaxed">Solar, battery and grid/diesel hybrid solutions for 24/7 power.</p>
+      </div>
+      <div class="svc-card border border-gray-200 rounded-xl p-6">
+        <div class="w-11 h-11 bg-green-50 rounded-lg flex items-center justify-center mb-4"><i class="fas fa-lightbulb text-brand text-xl"></i></div>
+        <h4 class="font-bold text-gray-900 mb-2">Solar Street Lighting</h4>
+        <p class="text-sm text-gray-500 leading-relaxed">Durable, energy-efficient solar street and area lighting.</p>
+      </div>
+      <div class="svc-card border border-gray-200 rounded-xl p-6">
+        <div class="w-11 h-11 bg-green-50 rounded-lg flex items-center justify-center mb-4"><i class="fas fa-home text-brand text-xl"></i></div>
+        <h4 class="font-bold text-gray-900 mb-2">Smart Homes &amp; IoT</h4>
+        <p class="text-sm text-gray-500 leading-relaxed">Automate and control your home energy intelligently.</p>
+      </div>
+      <div class="bg-brand rounded-xl p-6 flex flex-col justify-between">
+        <div>
+          <i class="fas fa-comments text-white/70 text-3xl mb-4"></i>
+          <h4 class="font-bold text-white text-lg mb-2">Need a Custom Solution?</h4>
+          <p class="text-white/80 text-sm leading-relaxed">Talk to our engineers about a system built for your needs.</p>
+        </div>
+        <a href="#contact" class="mt-6 inline-flex items-center gap-2 bg-white text-brand font-bold text-sm px-4 py-2.5 rounded-md hover:bg-gray-100 transition-colors">
+          Get Free Consultation <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- SAVINGS CALCULATOR -->
+<section id="calculator" class="py-20 bg-ink">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <p class="text-xs font-bold tracking-widest text-brand uppercase mb-2">SEE HOW MUCH YOU CAN SAVE</p>
+      <h2 class="text-3xl md:text-4xl font-black text-white mb-3">Calculate Your Energy Savings</h2>
+      <p class="text-gray-400 max-w-xl mx-auto text-sm leading-relaxed">Discover how much you could save by switching to solar. Estimate your diesel or electricity exposure and request a system recommendation.</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div class="bg-ink-soft rounded-2xl p-7 border border-white/10">
+        <h3 class="text-white font-bold text-lg mb-1">Your Generator Usage</h3>
+        <p class="text-gray-400 text-sm mb-6">Enter your details below to estimate costs.</p>
+        <div class="space-y-5">
+          <div>
+            <label class="block text-white/70 text-xs font-semibold uppercase tracking-wider mb-1.5">Generator Hours / Day</label>
+            <input id="calc-hours" type="number" min="1" max="24" value="14" class="calc-input w-full rounded-lg px-4 py-2.5 text-white text-sm" oninput="updateCalc()"/>
+          </div>
+          <div>
+            <label class="block text-white/70 text-xs font-semibold uppercase tracking-wider mb-1.5">Fuel Consumption (Litres / Hr)</label>
+            <input id="calc-litres" type="number" min="0.5" step="0.5" value="3" class="calc-input w-full rounded-lg px-4 py-2.5 text-white text-sm" oninput="updateCalc()"/>
+          </div>
+          <div>
+            <label class="block text-white/70 text-xs font-semibold uppercase tracking-wider mb-1.5">Price per Litre</label>
+            <input id="calc-price" type="number" min="1" value="1000" class="calc-input w-full rounded-lg px-4 py-2.5 text-white text-sm" oninput="updateCalc()"/>
+          </div>
+          <div>
+            <label class="block text-white/70 text-xs font-semibold uppercase tracking-wider mb-1.5">Currency</label>
+            <select id="calc-currency" class="calc-input w-full rounded-lg px-4 py-2.5 text-white text-sm" onchange="updateCalc()">
+              <option value="NGN">Nigerian Naira (NGN)</option>
+              <option value="CAD">Canadian Dollar (CAD)</option>
+            </select>
+          </div>
+          <button onclick="updateCalc()" class="w-full bg-brand hover:bg-green-600 text-white font-bold py-3 rounded-lg transition-colors text-sm mt-2">
+            <i class="fas fa-calculator mr-2"></i>Calculate Your Savings Now
+          </button>
+        </div>
+      </div>
+      <div class="bg-ink-soft rounded-2xl p-7 border border-white/10 flex flex-col justify-between">
+        <div>
+          <h3 class="text-white font-bold text-lg mb-1">Example Savings</h3>
+          <p class="text-gray-400 text-sm mb-8">Confront the true financial impact of your diesel generator usage and see how much you can save with a hybrid solar solution.</p>
+          <div class="mb-8">
+            <p class="text-gray-500 text-xs uppercase tracking-widest font-semibold mb-1">Monthly Exposure</p>
+            <div id="calc-monthly" class="text-4xl font-black text-brand">&#8358;1,260,000</div>
+            <p class="text-gray-500 text-xs mt-1">per month in diesel costs</p>
+          </div>
+          <div>
+            <p class="text-gray-500 text-xs uppercase tracking-widest font-semibold mb-1">Annual Exposure</p>
+            <div id="calc-annual" class="text-4xl font-black text-brand">&#8358;15,120,000</div>
+            <p class="text-gray-500 text-xs mt-1">per year - money a solar system could save</p>
+          </div>
+        </div>
+        <div class="mt-8 p-4 bg-green-900/20 border border-green-800/30 rounded-xl">
+          <p class="text-white/80 text-sm leading-relaxed"><i class="fas fa-info-circle text-brand mr-1"></i> A properly sized hybrid solar system could eliminate up to <strong class="text-white">80-90%</strong> of these costs in the first year.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl p-7 flex flex-col items-center justify-center text-center">
+        <div class="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center mb-4"><i class="fas fa-qrcode text-brand text-xl"></i></div>
+        <h3 class="text-gray-900 font-bold text-lg mb-2">Scan &amp; Start Saving</h3>
+        <p class="text-gray-500 text-sm mb-6">Scan the QR code to use our savings calculator on your phone.</p>
+        <div class="w-40 h-40 mb-6 rounded-xl overflow-hidden border-4 border-gray-100 shadow-inner">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fwa.me%2F2348175393233&size=160x160&color=00A859&bgcolor=ffffff&qzone=1" alt="QR Code" class="w-full h-full object-cover"/>
+        </div>
+        <p class="text-xs text-gray-400 mb-4">Or contact us directly:</p>
+        <a href="https://wa.me/2348175393233" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 bg-brand hover:bg-green-600 text-white font-bold px-6 py-3 rounded-lg text-sm transition-colors w-full justify-center">
+          <i class="fab fa-whatsapp text-lg"></i> WhatsApp Us Now
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- PACKAGES -->
+<section id="packages" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <p class="text-xs font-bold tracking-widest text-brand uppercase mb-2">SOLUTIONS FOR EVERY NEED</p>
+      <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-3">Our Solution Packages</h2>
+      <p class="text-gray-500 max-w-xl mx-auto text-sm">Choose a package that fits your needs. Every system is professionally designed and customized for maximum performance and savings.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+      <div class="pkg-card border border-gray-200 rounded-2xl p-6 flex flex-col">
+        <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4"><i class="fas fa-home text-brand text-2xl"></i></div>
+        <h3 class="text-xl font-black text-gray-900 mb-1">Residential Essential</h3>
+        <p class="text-gray-500 text-sm mb-5">Perfect for small homes and apartments.</p>
+        <ul class="space-y-2 mb-6 flex-1">
+          <li class="flex items-center gap-2 text-sm text-gray-700"><i class="fas fa-check-circle text-brand text-sm"></i> Lights, Fans, TVs</li>
+          <li class="flex items-center gap-2 text-sm text-gray-700"><i class="fas fa-check-circle text-brand text-sm"></i> Internet &amp; Devices</li>
+          <li class="flex items-center gap-2 text-sm text-gray-700"><i class="fas fa-check-circle text-brand text-sm"></i> Basic Appliances</li>
+          <li class="flex items-center gap-2 text-sm text-gray-700"><i class="fas fa-check-circle text-brand text-sm"></i> Up to 4kVA System</li>
+        </ul>
+        <div class="text-xs text-gray-400 uppercase tracking-wider mb-1">Starting From</div>
+        <div class="text-2xl font-black text-gray-900 mb-5">&#8358;2.8M</div>
+        <a href="#contact" class="block text-center border-2 border-brand text-brand hover:bg-brand hover:text-white font-bold py-2.5 rounded-lg transition-colors text-sm">Learn More</a>
+      </div>
+      <div class="pkg-card border border-gray-200 rounded-2xl p-6 flex flex-col">
+        <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4"><i class="fas fa-users text-brand text-2xl"></i></div>
+        <h3 class="text-xl font-black text-gray-900 mb-1">Family Comfort</h3>
+        <p class="text-gray-500 text-sm mb-5">For medium homes needing stable and reliable power.</p>
+        <ul class="space-y-2 mb-6 flex-1">
+          <li class="flex items-center gap-2 text-sm text-gray-700"><i class="fas fa-check-circle text-brand text-sm"></i> Refrigerators &amp; Freezers</li>
+          <li class="flex items-center gap-2 text-sm text-gray-700"><i class="fas fa-check-circle text-brand text-sm"></i> TVs, Fans &amp; Appliances</li>
+          <li class="flex items-center gap-2 text-sm text-gray-700"><i class="fas fa-check-circle text-brand text-sm"></i> Work-from-home Ready</li>
+          <li class="flex items-center gap-2 text-sm text-gray-700"><i class="fas fa-check-circle text-brand text-sm"></i> Up to 8kVA System</li>
+        </ul>
+        <div class="text-xs text-gray-400 uppercase tracking-wider mb-1">Starting From</div>
+        <div class="text-2xl font-black text-gray-900 mb-5">&#8358;5.5M</div>
+        <a href="#contact" class="block text-center border-2 border-brand text-brand hover:bg-brand hover:text-white font-bold py-2.5 rounded-lg transition-colors text-sm">Learn More</a>
+      </div>
+      <div class="pkg-card relative border-2 border-red-500 rounded-2xl p-6 flex flex-col shadow-xl">
+        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-red-600 text-white text-xs font-black uppercase tracking-widest px-4 py-1 rounded-full shadow whitespace-nowrap">&#9733; POPULAR</div>
+        <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mb-4"><i class="fas fa-star text-red-600 text-2xl"></i></div>
+        <h3 class="text-xl font-black text-gray-900 mb-1">Premium Energy System</h3>
+        <p class="text-gray-500 text-sm mb-5">For luxury homes and high-end comfort.</p>
+        <ul class="space-y-2 mb-6 flex-1">
+          <li class="flex items-center gap-2 text-sm text-gray-700"><i class="fas fa-check-circle text-red-500 text-sm"></i> Air Conditioners</li>
+          <li class="flex items-center gap-2 text-sm text-gray-700"><i class="fas fa-check-circle text-red-500 text-sm"></i> 24/7 Reliable Power</li>
+          <li class="flex items-center gap-2 text-sm text-gray-700"><i class="fas fa-check-circle text-red-500 text-sm"></i> Lithium Battery Storage</li>
+          <li class="flex items-center gap-2 text-sm text-gray-700"><i class="fas fa-check-circle text-red-500 text-sm"></i> Smart Monitoring</li>
+          <li class="flex items-center gap-2 text-sm text-gray-700"><i class="fas fa-check-circle text-red-500 text-sm"></i> Custom High Capacity</li>
+        </ul>
+        <div class="text-xs text-gray-400 uppercase tracking-wider mb-1">Starting From</div>
+        <div class="text-2xl font-black text-gray-900 mb-5">&#8358;9.5M</div>
+        <a href="#contact" class="block text-center bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 rounded-lg transition-colors text-sm">Learn More</a>
+      </div>
+      <div class="pkg-card border border-gray-200 rounded-2xl p-6 flex flex-col">
+        <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4"><i class="fas fa-building text-brand text-2xl"></i></div>
+        <h3 class="text-xl font-black text-gray-900 mb-1">Business Continuity</h3>
+        <p class="text-gray-500 text-sm mb-5">For offices, shops and commercial operations.</p>
+        <ul class="space-y-2 mb-6 flex-1">
+          <li class="flex items-center gap-2 text-sm text-gray-700"><i class="fas fa-check-circle text-brand text-sm"></i> Reduce Diesel Costs</li>
+          <li class="flex items-center gap-2 text-sm text-gray-700"><i class="fas fa-check-circle text-brand text-sm"></i> Protect Business Operations</li>
+          <li class="flex items-center gap-2 text-sm text-gray-700"><i class="fas fa-check-circle text-brand text-sm"></i> Hybrid Backup Systems</li>
+          <li class="flex items-center gap-2 text-sm text-gray-700"><i class="fas fa-check-circle text-brand text-sm"></i> Smart Energy Management</li>
+          <li class="flex items-center gap-2 text-sm text-gray-700"><i class="fas fa-check-circle text-brand text-sm"></i> Custom Solutions</li>
+        </ul>
+        <div class="text-xs text-gray-400 uppercase tracking-wider mb-1">Starting From</div>
+        <div class="text-2xl font-black text-gray-900 mb-5">Custom</div>
+        <a href="#contact" class="block text-center border-2 border-brand text-brand hover:bg-brand hover:text-white font-bold py-2.5 rounded-lg transition-colors text-sm">Request Quote <i class="fas fa-arrow-right ml-1"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- PROJECTS -->
+<section id="projects" class="py-20 bg-ink">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+      <div>
+        <p class="text-xs font-bold tracking-widest text-brand uppercase mb-2">OUR WORK</p>
+        <h2 class="text-3xl md:text-4xl font-black text-white">Proven Installations.<br/>Powering Homes. Empowering Businesses.</h2>
+      </div>
+      <a href="#projects" class="inline-flex items-center gap-1.5 text-brand font-semibold text-sm whitespace-nowrap">View All Projects <i class="fas fa-caret-right"></i></a>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="project-card relative overflow-hidden rounded-2xl h-80">
+        <img src="images/home-backup.webp" alt="Luxury Home Installation" class="proj-img w-full h-full object-cover" onerror="this.src='https://PETMA.com/assets/home-backup.webp'"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-5">
+          <span class="inline-block bg-brand text-white text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full mb-2">Residential</span>
+          <h4 class="text-white font-bold text-base leading-tight">Luxury Home Installation</h4>
+          <p class="text-white/60 text-xs mt-0.5">Asaba, Delta State</p>
+          <span class="inline-block mt-2 bg-white/10 border border-white/20 text-white text-xs px-2.5 py-1 rounded-full">13.7kVA Hybrid System</span>
+        </div>
+      </div>
+      <div class="project-card relative overflow-hidden rounded-2xl h-80">
+        <img src="images/hero-installation.webp" alt="Office Complex" class="proj-img w-full h-full object-cover" onerror="this.src='https://PETMA.com/assets/hero-installation.webp'"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-5">
+          <span class="inline-block bg-brand text-white text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full mb-2">Commercial</span>
+          <h4 class="text-white font-bold text-base leading-tight">Office Complex</h4>
+          <p class="text-white/60 text-xs mt-0.5">CMD Road Magodo, Lagos</p>
+          <span class="inline-block mt-2 bg-white/10 border border-white/20 text-white text-xs px-2.5 py-1 rounded-full">20kVA Hybrid System</span>
+        </div>
+      </div>
+      <div class="project-card relative overflow-hidden rounded-2xl h-80">
+        <img src="images/battery-warehouse.webp" alt="Manufacturing Plant" class="proj-img w-full h-full object-cover" onerror="this.src='https://PETMA.com/assets/battery-warehouse.webp'"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-5">
+          <span class="inline-block bg-brand text-white text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full mb-2">Industrial</span>
+          <h4 class="text-white font-bold text-base leading-tight">Manufacturing Plant</h4>
+          <p class="text-white/60 text-xs mt-0.5">Cambodia</p>
+          <span class="inline-block mt-2 bg-white/10 border border-white/20 text-white text-xs px-2.5 py-1 rounded-full">100kVA Hybrid System</span>
+        </div>
+      </div>
+      <div class="project-card relative overflow-hidden rounded-2xl h-80">
+        <img src="images/sme-project.webp" alt="Hotel Solar Project" class="proj-img w-full h-full object-cover" onerror="this.src='https://PETMA.com/assets/sme-project.webp'"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-5">
+          <span class="inline-block bg-brand text-white text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full mb-2">SME</span>
+          <h4 class="text-white font-bold text-base leading-tight">Hotel Solar Project</h4>
+          <p class="text-white/60 text-xs mt-0.5">Abayi, Abia</p>
+          <span class="inline-block mt-2 bg-white/10 border border-white/20 text-white text-xs px-2.5 py-1 rounded-full">6.2kW Hybrid System</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTALLER / AGENTS -->
+<section id="agents" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <p class="text-xs font-bold tracking-widest text-brand uppercase mb-2">OUR TEAM</p>
+      <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-3">Meet Our Installers &amp; Agents</h2>
+      <p class="text-gray-500 max-w-xl mx-auto text-sm leading-relaxed">
+        Our certified renewable energy professionals bring hands-on expertise and dedication to every installation.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+
+      <!-- Emmanuel Asinaba -->
+      <div class="bg-white rounded-2xl border border-gray-100 shadow-md overflow-hidden text-center hover:shadow-xl transition-shadow duration-300">
+        <div class="relative">
+          <img src="images/emmanuel-asinaba.jpg" alt="Emmanuel Asinaba"
+               class="w-full h-72 object-contain object-center bg-gray-100" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+        </div>
+        <div class="p-6">
+          <span class="inline-block bg-brand/10 text-brand text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-brand/20 mb-3">
+            <i class="fas fa-bolt mr-1"></i> Renewable / Electrical Installer
+          </span>
+          <h3 class="text-xl font-black text-gray-900 mt-2">Emmanuel Asinaba</h3>
+          <p class="text-gray-500 text-sm mt-2 leading-relaxed">
+            Certified installer specialising in solar PV systems, lithium battery storage
+            and hybrid energy solutions for residential and commercial clients.
+          </p>
+          <div class="flex justify-center gap-3 mt-5">
+            <a href="https://api.whatsapp.com/send/?phone=2349026857538&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 bg-brand hover:bg-green-600 text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition-colors">
+              <i class="fab fa-whatsapp"></i> Contact
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Innocent Achouso -->
+      <div class="bg-white rounded-2xl border border-gray-100 shadow-md overflow-hidden text-center hover:shadow-xl transition-shadow duration-300">
+        <div class="relative">
+          <img src="images/innocent-achouso.jpg" alt="Innocent Achouso"
+               class="w-full h-72 object-contain object-center bg-gray-100" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+        </div>
+        <div class="p-6">
+          <span class="inline-block bg-brand/10 text-brand text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-brand/20 mb-3">
+            <i class="fas fa-bolt mr-1"></i> Renewable / Electrical Installer
+          </span>
+          <h3 class="text-xl font-black text-gray-900 mt-2">Innocent Achouso</h3>
+          <p class="text-gray-500 text-sm mt-2 leading-relaxed">
+            Skilled electrical installer with expertise in smart energy monitoring,
+            solar street lighting and IoT-integrated power systems.
+          </p>
+          <div class="flex justify-center gap-3 mt-5">
+            <a href="https://api.whatsapp.com/send/?phone=2348071681211&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 bg-brand hover:bg-green-600 text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition-colors">
+              <i class="fab fa-whatsapp"></i> Contact
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section><!-- TESTIMONIALS -->
+<section id="testimonials" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+      <div>
+        <p class="text-xs font-bold tracking-widest text-brand uppercase mb-2">CUSTOMER TESTIMONIALS</p>
+        <h2 class="text-3xl md:text-4xl font-black text-gray-900">Real Feedback From<br/>PETMA Solar Customers</h2>
+      </div>
+      <a href="#testimonials" class="inline-flex items-center gap-1.5 text-brand font-semibold text-sm whitespace-nowrap">Read Full Stories <i class="fas fa-caret-right"></i></a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex gap-1"><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i></div>
+          <span class="text-xs bg-green-50 text-brand font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border border-green-200">&#10003; VERIFIED</span>
+        </div>
+        <i class="fas fa-quote-left text-green-200 text-3xl mb-3"></i>
+        <p class="text-gray-700 leading-relaxed mb-6">"PETMA installed our 13.7kVA hybrid system and we have not had a power problem since. The team was professional, the installation was clean, and the system works flawlessly. We are saving over &#8358;800,000 every month on diesel. Best investment we have made for our home."</p>
+        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+          <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center font-black text-brand text-sm">AC</div>
+          <div>
+            <div class="font-bold text-gray-900 text-sm">Adaeze C.</div>
+            <div class="text-xs text-gray-400">Asaba, Delta State &bull; Residential Client</div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl p-7 shadow-sm border border-gray-100">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex gap-1"><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i></div>
+          <span class="text-xs bg-green-50 text-brand font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border border-green-200">&#10003; VERIFIED</span>
+        </div>
+        <i class="fas fa-quote-left text-green-200 text-3xl mb-3"></i>
+        <p class="text-gray-700 leading-relaxed mb-6">"We installed a 20kVA system for our office complex and the results have been outstanding. Downtime is zero, our staff are more productive, and clients are impressed. PETMA's after-sales support is also exceptional - they respond quickly whenever we have questions. Highly recommended for any business serious about energy reliability."</p>
+        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+          <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center font-black text-brand text-sm">EO</div>
+          <div>
+            <div class="font-bold text-gray-900 text-sm">Emeka O.</div>
+            <div class="text-xs text-gray-400">CMD Road Magodo, Lagos &bull; Commercial Client</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- WHY CHOOSE PETMA -->
+<section class="py-20 bg-ink" id="about">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="text-xs font-bold tracking-widest text-brand uppercase mb-2">WHY CHOOSE PETMA?</p>
+        <h2 class="text-3xl md:text-4xl font-black text-white mb-4">Engineering Excellence.<br/>People You Can Trust.</h2>
+        <p class="text-gray-400 text-sm leading-relaxed mb-10">We combine engineering expertise, quality components and smart technologies to deliver energy solutions that last.</p>
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-900/40 flex items-center justify-center mt-0.5"><i class="fas fa-medal text-brand"></i></div>
+            <div><h5 class="text-white font-bold mb-0.5">Quality Components</h5><p class="text-gray-400 text-sm">We use premium and tested components from globally certified manufacturers.</p></div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-900/40 flex items-center justify-center mt-0.5"><i class="fas fa-tools text-brand"></i></div>
+            <div><h5 class="text-white font-bold mb-0.5">Expert Engineering</h5><p class="text-gray-400 text-sm">Proper sizing, clean installations and safe systems by qualified engineers.</p></div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-900/40 flex items-center justify-center mt-0.5"><i class="fas fa-microchip text-brand"></i></div>
+            <div><h5 class="text-white font-bold mb-0.5">Smart Technologies</h5><p class="text-gray-400 text-sm">IoT monitoring and intelligent energy management built into every system.</p></div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-900/40 flex items-center justify-center mt-0.5"><i class="fas fa-shield-alt text-brand"></i></div>
+            <div><h5 class="text-white font-bold mb-0.5">Reliable Support</h5><p class="text-gray-400 text-sm">Responsive support and maintenance you can count on, 24/7.</p></div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-900/40 flex items-center justify-center mt-0.5"><i class="fas fa-user-check text-brand"></i></div>
+            <div><h5 class="text-white font-bold mb-0.5">Customer Focused</h5><p class="text-gray-400 text-sm">Your satisfaction and long-term success are our priority.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="hidden lg:flex flex-col gap-4">
+        <div class="rounded-2xl overflow-hidden h-60">
+          <img src="images/home-backup.webp" alt="Solar installation" class="w-full h-full object-cover" onerror="this.src='https://PETMA.com/assets/home-backup.webp'"/>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-green-900/20 border border-green-800/40 rounded-2xl p-5 text-center">
+            <div class="text-3xl font-black text-brand mb-1">100+</div>
+            <div class="text-gray-400 text-xs">Completed Projects</div>
+          </div>
+          <div class="bg-green-900/20 border border-green-800/40 rounded-2xl p-5 text-center">
+            <div class="text-3xl font-black text-brand mb-1">5&#9733;</div>
+            <div class="text-gray-400 text-xs">Customer Rating</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT CTA -->
+<section id="contact" class="py-16 bg-brand">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="text-3xl md:text-4xl font-black text-white mb-4">Ready to Switch to Solar?</h2>
+    <p class="text-white/80 mb-8 max-w-xl mx-auto text-sm leading-relaxed">Get a free consultation and customised system design. No pressure - just honest engineering advice for your home or business.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="https://wa.me/2348175393233" target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center justify-center gap-2 bg-white text-brand font-bold px-8 py-3.5 rounded-lg hover:bg-gray-100 transition-colors text-base">
+        <i class="fab fa-whatsapp text-lg"></i> Chat on WhatsApp
+      </a>
+      <a href="tel:08100793528"
+         class="inline-flex items-center justify-center gap-2 border-2 border-white/60 text-white font-bold px-8 py-3.5 rounded-lg hover:border-white transition-colors text-base">
+        <i class="fas fa-phone-alt"></i> Call 08100793528
+      </a>
+    </div>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer class="bg-black text-white py-12">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+      <div>
+        <img src="images/logo-horizontal-clean.png" alt="PETMA Solar" class="h-10 w-auto mb-4" id="footer-logo"
+             onerror="document.getElementById('footer-logo').style.display='none';document.getElementById('footer-logo-text').style.display='block';"/>
+        <div id="footer-logo-text" style="display:none" class="text-xl font-black mb-4">
+          <span class="text-brand">Kowa</span><span class="text-red-500">tek</span>
+          <span class="text-white/50 font-normal text-sm ml-1">Solar</span>
+        </div>
+        <p class="text-gray-500 text-sm">&copy; 2026 PETMA Solar LTD.<br/>All Rights Reserved.</p>
+        <div class="flex gap-3 mt-5">
+          <a href="https://facebook.com/PETMA" target="_blank" rel="noopener noreferrer"
+             class="w-9 h-9 rounded-full bg-white/10 hover:bg-brand flex items-center justify-center transition-colors">
+            <i class="fab fa-facebook-f text-sm"></i>
+          </a>
+          <a href="https://instagram.com/PETMA" target="_blank" rel="noopener noreferrer"
+             class="w-9 h-9 rounded-full bg-white/10 hover:bg-brand flex items-center justify-center transition-colors">
+            <i class="fab fa-instagram text-sm"></i>
+          </a>
+          <a href="https://linkedin.com/company/PETMA" target="_blank" rel="noopener noreferrer"
+             class="w-9 h-9 rounded-full bg-white/10 hover:bg-brand flex items-center justify-center transition-colors">
+            <i class="fab fa-linkedin-in text-sm"></i>
+          </a>
+          <a href="https://wa.me/2348175393233" target="_blank" rel="noopener noreferrer"
+             class="w-9 h-9 rounded-full bg-white/10 hover:bg-green-600 flex items-center justify-center transition-colors">
+            <i class="fab fa-whatsapp text-sm"></i>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Contact Us</h4>
+        <div class="space-y-4">
+          <div class="flex items-start gap-3 text-sm text-gray-400">
+            <i class="fas fa-phone-alt text-brand mt-0.5 flex-shrink-0"></i>
+            <div>
+              <a href="tel:08100793528" class="hover:text-white transition-colors font-semibold text-white">08100793528</a><br/>
+              <a href="tel:09157334555" class="hover:text-white transition-colors">09157334555</a>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 text-sm text-gray-400">
+            <i class="fas fa-envelope text-brand mt-0.5 flex-shrink-0"></i>
+            <div>
+              <a href="mailto:info@PETMA.com" class="hover:text-white transition-colors">info@PETMA.com</a><br/>
+              <a href="https://www.PETMA.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">www.PETMA.com</a>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 text-sm text-gray-400">
+            <i class="fas fa-map-marker-alt text-brand mt-0.5 flex-shrink-0"></i>
+            <div>Royalty Plaza, 261 DBS Road,<br/>Central Area, Asaba, Delta State.</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wider">Quick Links</h4>
+        <div class="grid grid-cols-2 gap-2 text-sm text-gray-400">
+          <a href="#home" class="hover:text-brand transition-colors">Home</a>
+          <a href="#services" class="hover:text-brand transition-colors">Services</a>
+          <a href="#calculator" class="hover:text-brand transition-colors">Calculator</a>
+          <a href="#packages" class="hover:text-brand transition-colors">Packages</a>
+          <a href="#projects" class="hover:text-brand transition-colors">Projects</a>
+          <a href="#testimonials" class="hover:text-brand transition-colors">Testimonials</a>
+          <a href="#about" class="hover:text-brand transition-colors">About Us</a>
+          <a href="#contact" class="hover:text-brand transition-colors">Contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const hamburger=document.getElementById('hamburger');
+const mobileMenu=document.getElementById('mobile-menu');
+hamburger.addEventListener('click',()=>{
+  mobileMenu.classList.toggle('open');
+  const icon=hamburger.querySelector('i');
+  icon.className=mobileMenu.classList.contains('open')?'fas fa-times text-xl':'fas fa-bars text-xl';
+});
+mobileMenu.querySelectorAll('a').forEach(a=>{
+  a.addEventListener('click',()=>{
+    mobileMenu.classList.remove('open');
+    hamburger.querySelector('i').className='fas fa-bars text-xl';
+  });
+});
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>10);
+});
+const symbols={NGN:'\u20A6',CAD:'C$'};
+function updateCalc(){
+  const hours=parseFloat(document.getElementById('calc-hours').value)||0;
+  const litres=parseFloat(document.getElementById('calc-litres').value)||0;
+  const price=parseFloat(document.getElementById('calc-price').value)||0;
+  const currency=document.getElementById('calc-currency').value;
+  const sym=symbols[currency]||'\u20A6';
+  const monthly=Math.round(hours*litres*price*30);
+  const annual=monthly*12;
+  document.getElementById('calc-monthly').textContent=sym+monthly.toLocaleString('en-NG');
+  document.getElementById('calc-annual').textContent=sym+annual.toLocaleString('en-NG');
+}
+updateCalc();
+</script>
+</body>
+</html>
